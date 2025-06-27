@@ -1,0 +1,75 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+body{
+	background: #232323;
+	color: #FFF;
+	overflow-x: hidden;
+}
+.main{
+	padding: 2rem;
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+}
+button{
+	padding: .4rem;
+	border: none;
+	outline: none;
+	width: 4.9rem; 
+	border-radius: .2rem;
+}
+.notification{
+	background: #FFF;
+	color: #000;
+	width: 30vw;
+	height: 10vh;
+	padding: 1rem;
+	display: flex;
+	align-items: center;
+	position: relative;
+
+	left: 70vw;
+	animation: notificationSlide 1s;
+}
+.notification::before{
+	content: "";
+	width: 100%;
+	height: .4rem;
+	background: green;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	animation: notificationClose 1.7s;
+}
+.notificationSlideOut{
+	animation: notificationSlideOut 1.7s;
+}
+@keyframes notificationClose{
+	0%{}
+	100%{
+		width: 0%;
+	}
+}
+
+@keyframes notificationSlide{
+	0%{
+		transform: translateX(100%);
+	}
+	100%{
+		transform: translateX(-0%);
+	}
+}
+
+@keyframes notificationSlideOut{
+	0%{
+		transform: translateX(-0%);
+	}
+	100%{
+		transform: translateX(100%);	}
+}
